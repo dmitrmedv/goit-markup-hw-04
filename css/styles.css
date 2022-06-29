@@ -107,9 +107,15 @@ a {
   margin-left: auto;
 }
 
+.contacts-list .link {
+  display: inline-flex;
+  align-items: center;
+}
+
 .nav-list .item,
 .contacts-list .item {
   margin-right: 50px;
+  /* outline: 1px solid red; */
 }
 
 .nav-list .item:last-child,
@@ -117,17 +123,44 @@ a {
   margin-right: 0;
 }
 
+.contacts-list .link::before {
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.link.mail::before {
+  background-image: url(../images/envelope.svg);
+  width: 16px;
+  height: 12px;
+}
+
+.link.phone::before {
+  background-image: url(../images/smartphone.svg);
+  width: 10px;
+  height: 16px;
+}
+
 /* hero */
 .hero {
   background-color: var(--brand-background-color);
   text-align: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/Img.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero .container {
   padding: 200px 0;
 }
 
-.title.hero {
+.hero .title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -165,6 +198,7 @@ a {
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 50px;
 }
 
 /* benefits */
@@ -179,6 +213,35 @@ a {
 .benefits .item {
   width: 270px;
   justify-content: space-between;
+}
+
+.benefits .item::before {
+  display: block;
+  content: "";
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  background-color: var(--section-background-color-comand);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-size: 70px 70px;
+}
+
+.item.antenna::before {
+  background-image: url(../images/antenna.svg);
+}
+
+.item.clock::before {
+  background-image: url(../images/clock.svg);
+}
+
+.item.diagram::before {
+  background-image: url(../images/diagram.svg);
+}
+
+.item.astronaut::before {
+  background-image: url(../images/astronaut.svg);
 }
 
 .benefits .item:not(:first-child) {
@@ -222,10 +285,6 @@ a {
   max-height: auto;
 }
 
-.our-work .title {
-  margin-bottom: 50px;
-}
-
 .our-work .title-list {
   display: flex;
   justify-content: space-between;
@@ -234,10 +293,6 @@ a {
 /* comand */
 .comand {
   background-color: var(--section-background-color-comand);
-}
-
-.comand .title {
-  margin-bottom: 50px;
 }
 
 .comand .title-list {
@@ -280,6 +335,25 @@ a {
   line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
+}
+
+/* our-clients */
+
+.our-clients .list {
+  display: flex;
+}
+
+.our-clients .item {
+  display: block;
+  height: 92px;
+  width: 170px;
+  outline: 1px solid red;
+}
+
+.our-clients img {
+  display: block;
+  background-position: center;
+
 }
 
 /* menu portfolio */
@@ -381,3 +455,5 @@ a {
 .address-list .link.address {
   color: var(--basic-background-color);
 }
+
+
