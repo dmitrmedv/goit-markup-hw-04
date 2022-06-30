@@ -9,6 +9,7 @@
   --color-logo: #000000;
   --section-background-menu: #eeeeee;
   --header-border-color: #ececec;
+  --border-color: #afb1b8;
 }
 
 h1,
@@ -37,6 +38,10 @@ a {
   /* outline: 1px solid red; */
 }
 
+.icon {
+  display: block;
+}
+
 .container {
   width: 1200px;
   padding: 0 15px;
@@ -52,16 +57,24 @@ a {
   border-bottom: 1px solid var(--header-border-color);
 }
 
-.contacts-list .link {
-  color: var(--text-color-secondary);
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.header .link {
   display: block;
   padding: 32px 0;
 }
 
+.contacts-list .link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-color-secondary);
+}
+
 .nav-list .link {
   color: var(--text-color-primary);
-  display: block;
-  padding: 32px 0;
 }
 
 .link.active {
@@ -87,11 +100,6 @@ a {
   color: var(--text-color-accent);
 }
 
-.header .container {
-  display: flex;
-  align-items: center;
-}
-
 .nav {
   display: flex;
   align-items: center;
@@ -107,15 +115,9 @@ a {
   margin-left: auto;
 }
 
-.contacts-list .link {
-  display: inline-flex;
-  align-items: center;
-}
-
 .nav-list .item,
 .contacts-list .item {
   margin-right: 50px;
-  /* outline: 1px solid red; */
 }
 
 .nav-list .item:last-child,
@@ -123,22 +125,36 @@ a {
   margin-right: 0;
 }
 
-.contacts-list .link::before {
-  content: "";
-  display: inline-block;
+.contacts-list .icon {
   margin-right: 10px;
 }
 
-.link.mail::before {
-  background-image: url(../images/envelope.svg);
+.contacts-list .icon.envelope {
   width: 16px;
   height: 12px;
 }
 
-.link.phone::before {
-  background-image: url(../images/smartphone.svg);
+.contacts-list .icon.smartphone {
   width: 10px;
   height: 16px;
+}
+
+.contacts-list .link:hover .icon {
+  fill: var(--text-color-accent);
+}
+
+.logo {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+  color: var(--color-logo);
+  margin-right: 90px;
+}
+
+.logo-decoration {
+  color: var(--text-color-accent);
 }
 
 /* hero */
@@ -215,33 +231,17 @@ a {
   justify-content: space-between;
 }
 
-.benefits .item::before {
-  display: block;
-  content: "";
-  width: 270px;
-  height: 120px;
-  margin-bottom: 30px;
+.benefits .box {
+  display: inline-flex;
   background-color: var(--section-background-color-comand);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  background-size: 70px 70px;
+  padding: 25px 100px;
+  margin-bottom: 30px;
 }
 
-.item.antenna::before {
-  background-image: url(../images/antenna.svg);
-}
+.benefits .icon {
+  width: 70px;
+  height: 70px;
 
-.item.clock::before {
-  background-image: url(../images/clock.svg);
-}
-
-.item.diagram::before {
-  background-image: url(../images/diagram.svg);
-}
-
-.item.astronaut::before {
-  background-image: url(../images/astronaut.svg);
 }
 
 .benefits .item:not(:first-child) {
@@ -305,16 +305,9 @@ a {
   margin-bottom: 30px;
 }
 
-.worker-name {
-  margin-bottom: 10px;
-}
-
-.job-title {
-  margin-bottom: 30px;
-}
-
 .comand .item {
   width: 270px;
+  outline: 1px;
   background-color: var(--basic-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -327,6 +320,7 @@ a {
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 10px;
 }
 
 .job-title {
@@ -335,6 +329,17 @@ a {
   line-height: 1.18;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+
+.social-network {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.social-network.list .item:not(:last-child) {
+  margin-right: 10px;
 }
 
 /* our-clients */
@@ -343,17 +348,24 @@ a {
   display: flex;
 }
 
-.our-clients .item {
+.our-clients .link {
   display: block;
-  height: 92px;
-  width: 170px;
-  outline: 1px solid red;
+  padding: 16px 32px;
 }
 
-.our-clients img {
-  display: block;
-  background-position: center;
+.our-clients .item {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  /* padding: 16px 32px; */
+}
 
+.our-clients .item:hover,
+.our-clients .item:focus {
+  border-color: var(--text-color-accent);
+}
+
+.our-clients .item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* menu portfolio */
@@ -455,5 +467,3 @@ a {
 .address-list .link.address {
   color: var(--basic-background-color);
 }
-
-
