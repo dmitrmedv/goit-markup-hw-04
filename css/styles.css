@@ -216,6 +216,7 @@ contacts-list .link:focus .icon {
 }
 
 /* benefits */
+
 .benefits .container {
   margin: 0 auto;
 }
@@ -234,11 +235,6 @@ contacts-list .link:focus .icon {
   background-color: var(--section-background-color-comand);
   padding: 25px 100px;
   margin-bottom: 30px;
-}
-
-.benefits .icon {
-  width: 70px;
-  height: 70px;
 }
 
 .benefits .item:not(:first-child) {
