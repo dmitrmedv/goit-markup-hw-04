@@ -159,6 +159,10 @@ contacts-list .link:focus .icon {
 .hero {
   background-color: var(--brand-background-color);
   text-align: center;
+  height: 600px;
+  max-width: 1600px;
+  padding: 200px 0;
+  margin: 0 auto;
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -168,10 +172,6 @@ contacts-list .link:focus .icon {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-
-.hero .container {
-  padding: 200px 0;
 }
 
 .hero .title {
@@ -226,14 +226,16 @@ contacts-list .link:focus .icon {
 }
 
 .benefits .item {
-  width: 270px;
   justify-content: space-between;
 }
 
 .benefits .box {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--section-background-color-comand);
-  padding: 25px 100px;
+  height: 270px;
+  height: 120px;
   margin-bottom: 30px;
 }
 
@@ -365,19 +367,32 @@ contacts-list .link:focus .icon {
   display: flex;
 }
 
-.our-clients .link {
-  display: block;
-  padding: 16px 32px;
-}
-
 .our-clients .item {
   border: 1px solid var(--border-color);
   border-radius: 4px;
+  width: 170px;
+  height: 92px;
+}
+
+.our-clients .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.our-clients .icon {
+  fill: var(--border-color);
 }
 
 .our-clients .item:hover,
 .our-clients .item:focus {
   border-color: var(--text-color-accent);
+}
+
+.our-clients .item:hover .icon,
+.our-clients .item:focus  .icon{
+  fill: var(--text-color-accent);
 }
 
 .our-clients .item:not(:last-child) {
